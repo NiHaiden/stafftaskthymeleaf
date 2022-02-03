@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th>Finished at</th>
+        <th>Hours worked</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="empTask : ${tasks}">
+        <td th:text="${empTask.description}"></td>
+        <td th:text="${empTask.finished}"></td>
+        <td th:text="${empTask.hoursWorked}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

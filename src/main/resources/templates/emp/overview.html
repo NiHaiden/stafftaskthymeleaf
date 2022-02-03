@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview</title>
+</head>
+<body>
+<form method="get" th:action="@{/employee/tasks}">
+    <label th:for="employeeid">Employee</label>
+    <select id="empid" name="employeeid" th:field="*{employees}">
+        <option id="id" th:each="employee : ${employees}" th:name="employeeid" th:text="${employee.firstName + ' ' + employee.lastName}"
+                th:value="${employee.id}"></option>
+    </select>
+
+    <button type="submit">List Tasks</button>
+</form>
+<script>
+    document.getElementById("empid").name = "id";
+</script>
+</body>
+</html>
